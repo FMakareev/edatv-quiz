@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import "../../styles/ContentResultPage/contentResultPage.scss"
+
+import Context from "../../components/Context"
 
 /** Image */
 const burger = require("../../images/burger.svg") as string
@@ -17,6 +19,8 @@ export const ContentResultPage = () => {
     event.preventDefault()
     console.log(event.target)
   }
+
+  const { changedPage } = useContext(Context)
 
   return (
     <div className={"result-wrapper"}>
