@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import "../../styles/ContentTestPage/contentTestPage.scss"
 import Context from "../../components/Context"
-import { Link } from "gatsby"
 
 // /** Image */
 // const bc = require("../../images/bc-test.svg") as string
@@ -42,15 +41,13 @@ export const ContentTestPage = () => {
         <div className={"test__buttons"}>
           {curQuiz.answers.map(({ answer, id }: IAnswers) => {
             return (
-              <>
-                <div
-                  key={id}
-                  className={"test__buttons-link"}
-                  onClick={() => clickAnswer(id)}
-                >
-                  <button className={"test__buttons-name"}>{answer}</button>
-                </div>
-              </>
+              <div
+                key={id}
+                className={"test__buttons-link"}
+                onClick={() => clickAnswer(id)}
+              >
+                <button className={"test__buttons-name"}>{answer}</button>
+              </div>
             )
           })}
         </div>

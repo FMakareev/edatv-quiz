@@ -41,7 +41,7 @@ export default ({ children }: ILayout) => {
   let [changedPage, setChangedPage] = useState(false)
 
   const clickAnswer = (id: any) => {
-    if (test.length < activeQuestion + 1) {
+    if (test.length === activeQuestion + 1) {
       setChangedPage(true)
     } else {
       setActiveQuestion(activeQuestion + 1)
