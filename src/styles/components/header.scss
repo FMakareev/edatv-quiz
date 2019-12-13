@@ -1,0 +1,19 @@
+.header-wrapper {
+  padding: 22px 45px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.header-image {
+  padding: 0;
+  margin: 0;
+}
+
+.middle-img {
+  padding: 0 42px 0 0;
+}

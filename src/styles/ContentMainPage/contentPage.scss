@@ -1,0 +1,91 @@
+.content-wrapper {
+  text-align: center;
+}
+
+.content-title {
+  font-family: EDABold;
+  font-size: 54px;
+  line-height: 66px;
+  letter-spacing: 0.5px;
+  font-weight: 750;
+
+  padding: 0 0 16px 0;
+
+  color: #0a0a0a;
+}
+
+.content-subtitle {
+  font-family: AvenirRegular;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+
+  margin: 0;
+
+  color: #4f4f4f;
+}
+
+.content-subtitle__addiontal {
+  font-family: AvenirRegular;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+
+  padding: 0 15px 29px 15px;
+  margin: 0;
+
+  color: #4f4f4f;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-stage__image {
+  margin: 0;
+  padding: 0;
+}
+
+.content-stage__text {
+  font-family: AvenirRegular;
+  font-weight: 750;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+
+  color: #333333;
+
+  margin: 0 0 0 16px;
+
+  text-align: left;
+}
+
+.content-stage__wrapper {
+  width: 100%;
+  max-width: 665px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto 34px;
+}
+
+.content-stage__arrow {
+  color: #f2994a;
+
+  font-size: 48px;
+
+  padding: 0 52px 0 0;
+}
+
+.content-link {
+  text-decoration: none;
+}
+
+.content-button {
+  margin: 0 0 34px 0;
+}

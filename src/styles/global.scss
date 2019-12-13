@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/Backgound.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fff4de;
+  font-family: AvenirRegular;
+}
+
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "AvenirRegular";
+  src: url("../fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot");
+  src: url("../fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot")
+      format("embedded-opentype"),
+    url("../fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff") format("woff"),
+    url("../fonts/AvenirNextCyr/AvenirNextCyr-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AvenirBold";
+  src: url("../fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot");
+  src: url("../fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot")
+      format("embedded-opentype"),
+    url("../fonts/AvenirNextCyr/AvenirNextCyr-Bold.woff") format("woff"),
+    url("../fonts/AvenirNextCyr/AvenirNextCyr-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EDABold";
+  src: url("../fonts/EDATV/EDA\ TV\ bold.ttf") format("truetype");
+}

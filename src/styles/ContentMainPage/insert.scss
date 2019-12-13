@@ -1,0 +1,162 @@
+.insert-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  // background-image: url("../../images/Pattern.svg");
+}
+
+.insert-title {
+  width: 500px;
+
+  font-family: AvenirRegular;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.5px;
+  color: #333333;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin: 0;
+  padding: 0 0 16px 0;
+}
+
+.insert-block {
+  padding: 0 0 16px 0;
+}
+
+.insert-image {
+  padding: 0;
+  margin: 0;
+}
+
+.insert-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 0 0 12px 0;
+}
+
+.insert-left {
+  margin: 0;
+}
+
+.insert-left__title {
+  font-family: AvenirBold;
+  font-size: 12px;
+  line-height: 24px;
+
+  padding: 0 0 5px 0;
+  margin: 0;
+
+  width: 385px;
+}
+
+.insert-left__list {
+  font-family: AvenirRegular;
+  font-size: 12px;
+  line-height: 18px;
+  color: #4f4f4f;
+  font-weight: 450;
+
+  padding: 0;
+  margin: 0;
+
+  width: 485px;
+
+  list-style: none;
+}
+
+.insert-left__list-item {
+  padding: 0;
+  margin: 0 0 8px 0;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+}
+
+.insert-left__list-item-text {
+  margin: 0 0 0 8px;
+}
+
+.insert-right {
+  width: 384px;
+}
+
+.insert-right__title {
+  font-family: AvenirRegular;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4f4f4f;
+  font-weight: 450;
+
+  padding: 0;
+  margin: 0;
+}
+
+.insert-right__link {
+  display: block;
+
+  font-family: AvenirRegular;
+  font-size: 12px;
+  line-height: 18px;
+  color: #f2994a;
+
+  text-decoration: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.marg {
+  margin: 0 0 30px 0;
+}
+
+.insert-link {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.insert-link__content {
+  width: 132px;
+
+  margin: 0 0 0 24px;
+}
+
+.insert-link__description {
+  font-family: AvenirRegular;
+  font-size: 8px;
+  line-height: 9px;
+  color: #333333;
+
+  margin: 0;
+}
+
+.layout-sale {
+  display: block;
+
+  width: 254px;
+
+  font-family: AvenirRegular;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-decoration-line: underline;
+  color: #333333;
+
+  padding: 0 0 8px 0;
+  margin: 0 auto;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
