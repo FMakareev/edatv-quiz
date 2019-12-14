@@ -13,6 +13,7 @@ export interface ILayout {
 }
 
 export default ({ children }: ILayout) => {
+  /** Данные для теста */
   const [test, setTest] = useState([
     {
       text: "Вы бы поделились шаурмой с другом, когда сами голодны?",
@@ -46,16 +47,28 @@ export default ({ children }: ILayout) => {
     },
   ])
 
+  /** Активный вопрос */
   let [activeQuestion, setActiveQuestion] = useState(0)
+
+  /** Полученный ответ */
   let [currentAnswer, setCurrrentAnswer] = useState([])
+
+  /** Флаг для смены страницы */
   let [changedPage, setChangedPage] = useState(false)
 
-  const clickAnswer = (id: any) => {
+  /**
+   * Функция для работы с тестом
+   * @param id number - принимает id выбранного ответа в тесте
+   */
+  const clickAnswer = (id: number) => {
     if (test.length === activeQuestion + 1) {
+      /** Тут нужно как-то реализовать переходит на страницу результата */
       setChangedPage(true)
     } else {
+      /** Меняем стейт активного вопроса */
       setActiveQuestion(activeQuestion + 1)
 
+      /**Получаем стейт с выбранными ответами, чтобы потом куда-то прокинуть, если нужно будет */
       //@ts-ignore
       setCurrrentAnswer([
         ...currentAnswer,
