@@ -34,6 +34,16 @@ export default ({ children }: ILayout) => {
         { answer: "Нет", id: 11 },
       ],
     },
+    {
+      text: "И чо? И чо ?",
+      img: bc,
+      id: 3,
+      rightAnswer: 10,
+      answers: [
+        { answer: "Да", id: 10 },
+        { answer: "Нет", id: 11 },
+      ],
+    },
   ])
 
   let [activeQuestion, setActiveQuestion] = useState(0)
@@ -56,8 +66,6 @@ export default ({ children }: ILayout) => {
       ])
     }
   }
-
-  console.log(123, currentAnswer)
 
   return (
     <>

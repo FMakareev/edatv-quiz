@@ -2,7 +2,7 @@ import React from "react"
 
 export interface IParagraph {
   classes: string
-  text?: string
+  text: string
 }
 
 const Paragraph = ({ classes, text }: IParagraph) => {

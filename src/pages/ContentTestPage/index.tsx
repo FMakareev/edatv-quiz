@@ -2,14 +2,10 @@ import React, { useContext } from "react"
 import "../../styles/ContentTestPage/contentTestPage.scss"
 import Context from "../../components/Context"
 
-// /** Image */
-// const bc = require("../../images/bc-test.svg") as string
-
 /** View */
 import Paragraph from "../../components/Paragraph"
 
 export interface IAnswers {
-  [x: string]: any
   answer: string
   id: number
 }
@@ -21,7 +17,7 @@ export const ContentTestPage = () => {
   return (
     <>
       <div className={"test__wrapper"} key={curQuiz.text}>
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", overflow: "hidden" }}>
           <img
             className={"test__image"}
             src={curQuiz.img}
