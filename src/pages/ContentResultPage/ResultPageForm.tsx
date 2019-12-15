@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import useForm from "react-hook-form"
 
 /** View */
@@ -10,6 +10,7 @@ const styles = {
   type: "text",
   classesInput: "result-form__input",
   classesText: "result-form__validate",
+  classesTextError: "result-form__validate-error",
 }
 
 interface FormValue {
@@ -28,6 +29,7 @@ const GoogleFormEndpoint: string =
   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFWgfIIwndw8Vj1UWWXroG19Kb5woYliF8XRZHOmpACK8blg/formResponse"
 
 const ResultPageForm = () => {
+  const [error, setError] = useState("")
   const { register, errors, getValues } = useForm<FormValue>()
 
   return (
@@ -42,12 +44,15 @@ const ResultPageForm = () => {
 
         if (!formValue["entry.10457377"]) {
           errors.push({ "entry.10457377": "Обязательно для заполнения" })
+          setError("entry.10457377")
         }
         if (!formValue["entry.2087744403"]) {
           errors.push({ "entry.2087744403": "Обязательно для заполнения" })
+          setError("entry.2087744403")
         }
         if (!formValue["emailAddress"]) {
           errors.push({ emailAddress: "Обязательно для заполнения" })
+          setError("emailAddress")
         }
         if (errors.length > 0) {
           event.preventDefault()
@@ -64,8 +69,10 @@ const ResultPageForm = () => {
         name={"entry.10457377"}
         register={register}
         errors={errors}
+        error={error}
         {...styles}
       />
+
       <Input
         htmlFor={"2"}
         label={"Телефон*"}
@@ -74,6 +81,7 @@ const ResultPageForm = () => {
         name={"entry.2087744403"}
         register={register}
         errors={errors}
+        error={error}
         {...styles}
       />
 
@@ -85,8 +93,10 @@ const ResultPageForm = () => {
         name={"emailAddress"}
         register={register}
         errors={errors}
+        error={error}
         {...styles}
       />
+
       <Input
         htmlFor={"4"}
         label={"Номер приставки"}

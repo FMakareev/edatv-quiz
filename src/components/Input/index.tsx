@@ -14,22 +14,22 @@ export interface IInput {
   [prop: string]: any
 }
 
-const Input = (
-  {
-    classesLabel,
-    htmlFor,
-    label,
-    type,
-    placeholder,
-    text,
-    classesInput,
-    classesText,
-    register,
-    name,
-    ...rest
-  }: IInput,
-) => {
-
+const Input = ({
+  classesLabel,
+  htmlFor,
+  label,
+  type,
+  placeholder,
+  text,
+  classesInput,
+  classesText,
+  classesTextError,
+  register,
+  name,
+  error,
+  ...rest
+}: IInput) => {
+  console.log(1, error, name)
   return (
     <div>
       <label className={classesLabel} htmlFor={htmlFor}>
@@ -44,7 +44,7 @@ const Input = (
         name={name}
         {...rest}
       />
-      <p className={classesText}>{text}</p>
+      <p className={error === name ? classesTextError : classesText}>{text}</p>
     </div>
   )
 }
