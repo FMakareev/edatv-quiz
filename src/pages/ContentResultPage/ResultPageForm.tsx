@@ -10,7 +10,7 @@ const styles = {
   type: "text",
   classesInput: "result-form__input",
   classesText: "result-form__validate",
-  classesTextError: "result-form__validate-error",
+  // classesTextError: "result-form__validate-error",
 }
 
 interface FormValue {
@@ -30,6 +30,8 @@ const GoogleFormEndpoint: string =
 
 const ResultPageForm = () => {
   const [error, setError] = useState("")
+  const [text, setText] = useState("Обязательно для заполнения")
+
   const { register, errors, getValues } = useForm<FormValue>()
 
   return (
@@ -45,15 +47,27 @@ const ResultPageForm = () => {
         if (!formValue["entry.10457377"]) {
           errors.push({ "entry.10457377": "Обязательно для заполнения" })
           setError("entry.10457377")
+          setText("Обязательно для заполнения")
         }
         if (!formValue["entry.2087744403"]) {
           errors.push({ "entry.2087744403": "Обязательно для заполнения" })
           setError("entry.2087744403")
+          setText("Обязательно для заполнения")
         }
+
         if (!formValue["emailAddress"]) {
           errors.push({ emailAddress: "Обязательно для заполнения" })
           setError("emailAddress")
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+            formValue["emailAddress"]
+          )
+        ) {
+          errors.push({ emailAddress: "Email не соответствует" })
+          setError("emailAddress")
+          setText("Email не соответствует")
         }
+
         if (errors.length > 0) {
           event.preventDefault()
           event.stopPropagation()
@@ -65,7 +79,7 @@ const ResultPageForm = () => {
         htmlFor={"1"}
         label={"ФИО*"}
         placeholder={"Введите ваши фамилию, имя и отчество"}
-        text={"Обязательное поле"}
+        text={text}
         name={"entry.10457377"}
         register={register}
         errors={errors}
@@ -77,7 +91,7 @@ const ResultPageForm = () => {
         htmlFor={"2"}
         label={"Телефон*"}
         placeholder={"Введите ваш номер телефона"}
-        text={"Обязательное поле"}
+        text={text}
         name={"entry.2087744403"}
         register={register}
         errors={errors}
@@ -89,7 +103,7 @@ const ResultPageForm = () => {
         htmlFor={"3"}
         label={"E-mail*"}
         placeholder={"Введите ваш e-mail адрес"}
-        text={"Обязательное поле"}
+        text={text}
         name={"emailAddress"}
         register={register}
         errors={errors}

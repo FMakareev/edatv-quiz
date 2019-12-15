@@ -12,7 +12,7 @@ export interface IAnswers {
 }
 
 export const ContentTestPage = () => {
-  const { test, clickAnswer, activeQuestion, changedPage } = useContext(Context)
+  const { test, clickAnswer, activeQuestion } = useContext(Context)
   const curQuiz = test[activeQuestion]
 
   return (

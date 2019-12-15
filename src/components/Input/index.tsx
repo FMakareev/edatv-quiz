@@ -29,7 +29,6 @@ const Input = ({
   error,
   ...rest
 }: IInput) => {
-  console.log(1, error, name)
   return (
     <div>
       <label className={classesLabel} htmlFor={htmlFor}>
@@ -44,7 +43,7 @@ const Input = ({
         name={name}
         {...rest}
       />
-      <p className={error === name ? classesTextError : classesText}>{text}</p>
+      <p className={classesText}>{error === name ? text : ""}</p>
     </div>
   )
 }
