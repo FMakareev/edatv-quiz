@@ -13,7 +13,6 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    `gatsby-plugin-typography`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-tslint`,
     `gatsby-plugin-typescript`,

@@ -1,13 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import useForm from "react-hook-form"
+
 
 /** View */
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 
-export interface IResultPageForm {
-  handleSubmit: (event: any) => void
-}
 
 const styles = {
   classesLabel: "result-form__label",
@@ -16,22 +14,71 @@ const styles = {
   classesText: "result-form__validate",
 }
 
-const ResultPageForm = ({ handleSubmit }: IResultPageForm) => {
+
+interface FormValue {
+  emailAddress: string; //
+  entry: {
+    10457377: string; // фио
+    2087744403: string;  // телефон
+    40037458: string; // Номер приставки
+    405545350: string; // Город
+  }
+
+  [prop: string]: any;
+}
+
+const GoogleFormEndpoint: string = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFWgfIIwndw8Vj1UWWXroG19Kb5woYliF8XRZHOmpACK8blg/formResponse"
+
+const ResultPageForm = () => {
+  const { register, errors, getValues } = useForm<FormValue>()
+
   return (
-    <form className={"result-form"} onSubmit={handleSubmit}>
+    <form
+      className={"result-form"}
+      target="_self"
+      method="POST"
+      action={GoogleFormEndpoint}
+      onSubmit={(event: any) => {
+
+        const formValue = getValues()
+        const errors = []
+
+        if (!formValue["entry.10457377"]) {
+          errors.push({ "entry.10457377": "Обязательно для заполнения" })
+        }
+        if (!formValue["entry.2087744403"]) {
+          errors.push({ "entry.2087744403": "Обязательно для заполнения" })
+        }
+        if (!formValue["emailAddress"]) {
+          errors.push({ "emailAddress": "Обязательно для заполнения" })
+        }
+        if (errors.length > 0) {
+          event.preventDefault()
+          event.stopPropagation()
+        } else {
+
+        }
+      }}
+    >
+
       <Input
         htmlFor={"1"}
         label={"ФИО*"}
         placeholder={"Введите ваши фамилию, имя и отчество"}
         text={"Обязательное поле"}
+        name={"entry.10457377"}
+        register={register}
+        errors={errors}
         {...styles}
       />
-
       <Input
         htmlFor={"2"}
         label={"Телефон*"}
         placeholder={"Введите ваш номер телефона"}
         text={"Обязательное поле"}
+        name={"entry.2087744403"}
+        register={register}
+        errors={errors}
         {...styles}
       />
 
@@ -40,27 +87,30 @@ const ResultPageForm = ({ handleSubmit }: IResultPageForm) => {
         label={" E-mail*"}
         placeholder={"Введите ваш e-mail адрес"}
         text={"Обязательное поле"}
+        name={"emailAddress"}
+        register={register}
+        errors={errors}
         {...styles}
       />
-
       <Input
         htmlFor={"4"}
         label={"Номер приставки"}
         placeholder={"Введите ваш номер приставки при наличии"}
+        name={"entry.40037458"}
+        register={register}
         {...styles}
       />
-
       <Input
         htmlFor={"5"}
         label={"Город"}
         placeholder={"Введите город проживания"}
+        name={"entry.405545350"}
+        register={register}
         {...styles}
       />
 
       <div className={"result-form__send-wrapper"}>
-        <Link className={"result-form__send-link"} to={"/"}>
-          <Button name={"Участвовать!"} />
-        </Link>
+        <Button name={"Участвовать!"}/>
       </div>
     </form>
   )

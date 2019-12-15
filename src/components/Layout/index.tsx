@@ -4,6 +4,7 @@ import Context from "../Context"
 
 /** View */
 import Header from "../Header"
+import Head from "../Head/Head"
 
 /** Image */
 const bc = require("../../images/bc-test.svg") as string
@@ -82,6 +83,7 @@ export default ({ children }: ILayout) => {
 
   return (
     <>
+      <Head/>
       <Header />
       <Context.Provider
         value={{ test, clickAnswer, activeQuestion, changedPage }}

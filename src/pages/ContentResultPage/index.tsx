@@ -15,10 +15,6 @@ import ResultPagePresent from "./ResultPagePresent"
 import Paragraph from "../../components/Paragraph"
 
 export const ContentResultPage = () => {
-  const handleSubmit = (event: any) => {
-    event.preventDefault()
-    console.log(event.target)
-  }
 
   const { changedPage } = useContext(Context)
 
@@ -52,7 +48,7 @@ export const ContentResultPage = () => {
           могут отличаться от представленных изображений.
         </div>
 
-        <ResultPageForm handleSubmit={handleSubmit} />
+        <ResultPageForm />
       </div>
     </div>
   )

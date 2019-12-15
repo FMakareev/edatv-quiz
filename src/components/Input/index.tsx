@@ -6,21 +6,30 @@ export interface IInput {
   label: string
   type: string
   placeholder: string
+  name: string
   text?: string
   classesInput: string
   classesText?: string
+
+  [prop: string]: any
 }
 
-const Input = ({
-  classesLabel,
-  htmlFor,
-  label,
-  type,
-  placeholder,
-  text,
-  classesInput,
-  classesText,
-}: IInput) => {
+const Input = (
+  {
+    classesLabel,
+    htmlFor,
+    label,
+    type,
+    placeholder,
+    text,
+    classesInput,
+    classesText,
+    register,
+    name,
+    ...rest
+  }: IInput,
+) => {
+
   return (
     <div>
       <label className={classesLabel} htmlFor={htmlFor}>
@@ -31,6 +40,9 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         id={htmlFor}
+        ref={register}
+        name={name}
+        {...rest}
       />
       <p className={classesText}>{text}</p>
     </div>
