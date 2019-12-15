@@ -4,7 +4,16 @@
   justify-content: center;
   flex-direction: column;
 
-  // background-image: url("../../images/Pattern.svg");
+  max-width: 910px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.insert-container {
+  background-image: url("../../images/bc-bottom.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #fff;
 }
 
 .insert-title {
@@ -22,7 +31,7 @@
   text-align: center;
 
   margin: 0;
-  padding: 0 0 16px 0;
+  padding: 16px 0;
 }
 
 .insert-block {
@@ -159,4 +168,16 @@
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+}
+
+.insert-image__chicken {
+  position: absolute;
+  top: 54%;
+  left: 74%;
+}
+
+.insert-image__pateto {
+  position: absolute;
+  top: 54%;
+  left: 18%;
 }

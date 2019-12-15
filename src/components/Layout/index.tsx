@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import "../../styles/components/layout.scss"
 import Context from "../Context"
+import { navigate } from "gatsby"
 
 /** View */
-import Header from "../Header"
 import Head from "../Head/Head"
+import Header from "../Header"
 
 /** Image */
 const bc = require("../../images/bc-test.svg") as string
@@ -54,9 +55,6 @@ export default ({ children }: ILayout) => {
   /** Полученный ответ */
   let [currentAnswer, setCurrrentAnswer] = useState([])
 
-  /** Флаг для смены страницы */
-  let [changedPage, setChangedPage] = useState(false)
-
   /**
    * Функция для работы с тестом
    * @param id number - принимает id выбранного ответа в тесте
@@ -64,7 +62,7 @@ export default ({ children }: ILayout) => {
   const clickAnswer = (id: number) => {
     if (test.length === activeQuestion + 1) {
       /** Тут нужно как-то реализовать переходит на страницу результата */
-      setChangedPage(true)
+      navigate("/result")
     } else {
       /** Меняем стейт активного вопроса */
       setActiveQuestion(activeQuestion + 1)
@@ -83,18 +81,11 @@ export default ({ children }: ILayout) => {
 
   return (
     <>
-      <Head/>
+      <Head />
       <Header />
-      <Context.Provider
-        value={{ test, clickAnswer, activeQuestion, changedPage }}
-      >
+      <Context.Provider value={{ test, clickAnswer, activeQuestion }}>
         {children}
       </Context.Provider>
-
-      <div className={"layout-sale"}>
-        Правила акции. Срок проведения акции: с 20 декабря 2019 года по 15
-        января 2020 года.
-      </div>
     </>
   )
 }

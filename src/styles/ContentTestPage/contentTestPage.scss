@@ -1,11 +1,6 @@
 .test__wrapper {
-  padding: 124px 0 0 0;
+  padding: 104px 0 0 0;
   margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .test__image {
@@ -20,7 +15,7 @@
   font-family: EDABold;
   color: #333333;
 
-  margin: 33px 0 48px 0;
+  margin: 53px 0 48px 0;
 
   max-width: 700px;
   width: 100%;
@@ -30,18 +25,18 @@
 
 .test__triangle {
   height: 0;
-  width: 227px;
+  width: 21px;
   border-bottom: 60px solid #fff;
   border-left: 102px solid transparent;
-  border-right: 104px solid transparent;
+  border-right: 107px solid transparent;
   position: absolute;
-  top: 85%;
-  left: 38%;
+  top: 86%;
+  left: 40%;
 
   &::after {
     content: " ";
     position: absolute;
-    top: -1px;
+    top: -2px;
     left: -22px;
     width: 66px;
     height: 104px;
@@ -59,7 +54,7 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 86%;
+  top: 87%;
   left: 46%;
 }
 
@@ -93,4 +88,24 @@
 .test__buttons-link {
   text-decoration: none;
   cursor: pointer;
+}
+
+.test__block {
+  position: relative;
+  overflow: hidden;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  top: 20px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -5,6 +5,8 @@ import "../../styles/components/header.scss"
 const tricolor = require("../../images/tricolor.png") as string
 const age = require("../../images/18.svg") as string
 const food = require("../../images/ic_Foodlogo.svg") as string
+const cloudLeft = require("../../images/cloudLeft.png") as string
+const cloudRight = require("../../images/cloudRight.png") as string
 
 export const Header = () => {
   return (
@@ -17,12 +19,27 @@ export const Header = () => {
         height="55"
       />
 
-      <div>
+      <img
+        src={cloudLeft}
+        alt=""
+        className={"header-bc__right"}
+        width={277}
+        height={178}
+      />
+      <img
+        src={cloudRight}
+        alt=""
+        className={"header-bc__left"}
+        width={357}
+        height={154}
+      />
+
+      <div className={"header-image__block"}>
         <img
           className={"header-image middle-img"}
           src={tricolor}
           alt="Триколор"
-          width="200"
+          width="163"
           height="42"
         />
         <img

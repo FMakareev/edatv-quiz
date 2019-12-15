@@ -1,5 +1,16 @@
 .content-wrapper {
   text-align: center;
+  max-width: 910px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0 0 0;
+}
+
+.content-container {
+  background-image: url("../../images/bc-top.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 50% 80%;
 }
 
 .content-title {
@@ -12,6 +23,9 @@
   padding: 0 0 16px 0;
 
   color: #0a0a0a;
+
+  z-index: 999;
+  position: relative;
 }
 
 .content-subtitle {
@@ -87,5 +101,5 @@
 }
 
 .content-button {
-  margin: 0 0 34px 0;
+  margin: 0 0 24px 0;
 }

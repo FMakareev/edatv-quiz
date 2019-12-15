@@ -4,6 +4,7 @@ import Context from "../../components/Context"
 
 /** View */
 import Paragraph from "../../components/Paragraph"
+import RulesSale from "../../components/RulesSale"
 
 export interface IAnswers {
   answer: string
@@ -17,7 +18,7 @@ export const ContentTestPage = () => {
   return (
     <>
       <div className={"test__wrapper"} key={curQuiz.text}>
-        <div style={{ position: "relative", overflow: "hidden" }}>
+        <div className={"test__block"}>
           <img
             className={"test__image"}
             src={curQuiz.img}
@@ -32,20 +33,24 @@ export const ContentTestPage = () => {
           </p>
         </div>
 
-        <Paragraph classes={"test__question"} text={curQuiz.text} />
+        <div className={"insert-container share"}>
+          <Paragraph classes={"test__question"} text={curQuiz.text} />
 
-        <div className={"test__buttons"}>
-          {curQuiz.answers.map(({ answer, id }: IAnswers) => {
-            return (
-              <div
-                key={id}
-                className={"test__buttons-link"}
-                onClick={() => clickAnswer(id)}
-              >
-                <button className={"test__buttons-name"}>{answer}</button>
-              </div>
-            )
-          })}
+          <div className={"test__buttons"}>
+            {curQuiz.answers.map(({ answer, id }: IAnswers) => {
+              return (
+                <div
+                  key={id}
+                  className={"test__buttons-link"}
+                  onClick={() => clickAnswer(id)}
+                >
+                  <button className={"test__buttons-name"}>{answer}</button>
+                </div>
+              )
+            })}
+          </div>
+
+          <RulesSale />
         </div>
       </div>
     </>

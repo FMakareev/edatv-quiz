@@ -1,11 +1,9 @@
 import React from "react"
 import useForm from "react-hook-form"
 
-
 /** View */
 import Button from "../../components/Button"
 import Input from "../../components/Input"
-
 
 const styles = {
   classesLabel: "result-form__label",
@@ -14,20 +12,20 @@ const styles = {
   classesText: "result-form__validate",
 }
 
-
 interface FormValue {
-  emailAddress: string; //
+  emailAddress: string //
   entry: {
-    10457377: string; // фио
-    2087744403: string;  // телефон
-    40037458: string; // Номер приставки
-    405545350: string; // Город
+    10457377: string // фио
+    2087744403: string // телефон
+    40037458: string // Номер приставки
+    405545350: string // Город
   }
 
-  [prop: string]: any;
+  [prop: string]: any
 }
 
-const GoogleFormEndpoint: string = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFWgfIIwndw8Vj1UWWXroG19Kb5woYliF8XRZHOmpACK8blg/formResponse"
+const GoogleFormEndpoint: string =
+  "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFWgfIIwndw8Vj1UWWXroG19Kb5woYliF8XRZHOmpACK8blg/formResponse"
 
 const ResultPageForm = () => {
   const { register, errors, getValues } = useForm<FormValue>()
@@ -39,7 +37,6 @@ const ResultPageForm = () => {
       method="POST"
       action={GoogleFormEndpoint}
       onSubmit={(event: any) => {
-
         const formValue = getValues()
         const errors = []
 
@@ -50,17 +47,15 @@ const ResultPageForm = () => {
           errors.push({ "entry.2087744403": "Обязательно для заполнения" })
         }
         if (!formValue["emailAddress"]) {
-          errors.push({ "emailAddress": "Обязательно для заполнения" })
+          errors.push({ emailAddress: "Обязательно для заполнения" })
         }
         if (errors.length > 0) {
           event.preventDefault()
           event.stopPropagation()
         } else {
-
         }
       }}
     >
-
       <Input
         htmlFor={"1"}
         label={"ФИО*"}
@@ -84,7 +79,7 @@ const ResultPageForm = () => {
 
       <Input
         htmlFor={"3"}
-        label={" E-mail*"}
+        label={"E-mail*"}
         placeholder={"Введите ваш e-mail адрес"}
         text={"Обязательное поле"}
         name={"emailAddress"}
@@ -110,7 +105,7 @@ const ResultPageForm = () => {
       />
 
       <div className={"result-form__send-wrapper"}>
-        <Button name={"Участвовать!"}/>
+        <Button name={"Участвовать!"} />
       </div>
     </form>
   )
