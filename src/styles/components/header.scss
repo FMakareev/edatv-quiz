@@ -1,12 +1,12 @@
 .header-wrapper {
-  padding: 22px 45px 0 30px;
+  padding: 22px 0 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
-  position: absolute;
-  width: 96%;
-  top: 0;
+  // z-index: 999;
+  // position: absolute;
+  // width: 98%;
+  // top: 0;
 }
 
 .header-image,
@@ -14,6 +14,10 @@
   padding: 0;
   margin: 0;
   z-index: 999;
+}
+
+.header-image__block {
+  padding: 0 45px 0 0;
 }
 
 .middle-img {

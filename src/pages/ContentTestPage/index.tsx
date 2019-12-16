@@ -12,10 +12,13 @@ export interface IAnswers {
 }
 
 export const ContentTestPage = () => {
-  const { activeQuestion } = useContext(Context)
   const { clickAnswer } = useContext(Context)
-  const { test } = useContext(Context)
 
+  const { activeQuestion } = useContext(Context)
+  const { test } = useContext(Context)
+  // const getContext = useContext(Context)
+
+  // const curQuiz = getContext.test[getContext.activeQuestion]
   const curQuiz = test[activeQuestion]
 
   return (
@@ -30,10 +33,11 @@ export const ContentTestPage = () => {
             height={416}
           />
 
-          <div className={"test__triangle"}></div>
-          <p className={"test__triangle-text"}>
-            {activeQuestion + 1}/{test.length}
-          </p>
+          <div className={"test__triangle"}>
+            <p className={"test__triangle-text"}>
+              {activeQuestion + 1}/{test.length}
+            </p>
+          </div>
         </div>
 
         <div className={"insert-container share"}>

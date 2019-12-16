@@ -1,5 +1,5 @@
 .test__wrapper {
-  padding: 104px 0 0 0;
+  padding: 34px 0 0 0;
   margin: 0 auto;
 }
 
@@ -54,8 +54,9 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 87%;
-  left: 46%;
+  left: -76%;
+  top: 0;
+  z-index: 999;
 }
 
 .test__buttons {
@@ -96,9 +97,8 @@
   z-index: 999;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
 
   top: 20px;
 }
