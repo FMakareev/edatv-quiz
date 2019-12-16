@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "surge  E:\\Dev\\FrontendProjects\\food\\public\\ http://edaquiz.surge.sh/"
   },
   "dependencies": {
     "@types/react-helmet": "^5.0.14",

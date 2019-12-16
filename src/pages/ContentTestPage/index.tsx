@@ -23,11 +23,11 @@ export const ContentTestPage = () => {
 
   return (
     <>
-      <div className={"test__wrapper"} key={curQuiz.text}>
+      <div className={"test__wrapper"} key={curQuiz && curQuiz.text}>
         <div className={"test__block"}>
           <img
             className={"test__image"}
-            src={curQuiz.img}
+            src={curQuiz && curQuiz.img}
             alt={"Бекграунд"}
             width={1034}
             height={416}
@@ -41,10 +41,10 @@ export const ContentTestPage = () => {
         </div>
 
         <div className={"insert-container share"}>
-          <Paragraph classes={"test__question"} text={curQuiz.text} />
+          <Paragraph classes={"test__question"} text={curQuiz && curQuiz.text} />
 
           <div className={"test__buttons"}>
-            {curQuiz.answers.map(({ answer, id }: IAnswers) => {
+            {curQuiz && curQuiz.answers.map(({ answer, id }: IAnswers) => {
               return (
                 <div
                   key={id}
